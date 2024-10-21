@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+  color: var(--dark-blue);
+  background: var(--white-text);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding-left: 3rem;
+  padding-right: 3rem;
+  width: 100%;
+  z-index: 50;
+
+  .logo-image {
+    object-fit: contain;
+    flex-shrink: 0;
+    max-width: 100%;
+    aspect-ratio: 2.78;
+  }
+
+  // Navigation list
+  .navigation {
+    padding-right: 3rem;
+    gap: 2.5rem;
+
+    .nav-list {
+      padding: 0 0 !important;
+      position: relative;
+
+      .nav-link-parent {
+        padding: 2rem 1.75rem;
+        white-space: nowrap; /* Ensure long text doesn't break */
+        transition: background-color 0.3s, box-shadow 0.3s;
+      }
+
+      .nav-link {
+        .list-icon {
+          color: var(--dark-blue);
+          padding-right: 0.5rem;
+        }
+      }
+
+      .nav-list-item {
+        margin: 0 !important;
+        background-color: var(--white-text);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+
+        .sub-menu-item {
+          padding: 1rem;
+          white-space: nowrap; /* Ensure long text doesn't break */
+          transition: background-color 0.3s, box-shadow 0.3s;
+
+          &:hover {
+            background-color: var(--light-gray);
+          }
+        }
+      }
+    }
+
+    .nav-list:hover {
+      transition: background-color 0.3s, box-shadow 0.3s;
+      background-color: var(--light-gray);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .search-bar {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

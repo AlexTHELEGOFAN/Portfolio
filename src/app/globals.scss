@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*url("../assets/fonts/biennale/biennale-regular.ttf")*/
+
+/*@font-face {*/
+/*  font-family: 'Biennale';*/
+/*  src: url('../assets/fonts/biennale/biennale-regular.ttf') format('truetype');*/
+/*  font-weight: normal;*/
+/*  font-style: normal;*/
+/*}*/
+
+:root {
+  --black: #000000;
+  --blue: #0073E6;
+  --dark-background: #100e0c;
+  --dark-blue: #00005C;
+  --dark-purple: #663894;
+  --green: #4AA82D;
+  --light-blue: #3DC7FF;
+  --light-gray: #D9D9D9;
+  --light-purple: #9747FF;
+  --orange: #F56A00;
+  --pink: #ff49db;
+  --white-background: #EFF1F3;
+  --white-section: #FEFEFE;
+  --white-text: #F2F2F2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dark-background: dark-background;
+  }
+}
+
+body {
+  background: var(--white-background);
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color: var(--dark-blue);
+}
+
+.content {
+  flex-grow: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.section-white {
+  background: var(--white-section);
+  padding: 60px 170px;
+}
+
+.section-blue {
+  background: var(--dark-blue);
+  padding: 60px 170px;
+}
+
+.section-end {
+  background: var(--blue);
+  padding: 60px 170px;
+}
+
+.button-blue-icon-right {
+  background-color: #0073E6;
+  color: #F2F2F2;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.button-white-icon-right {
+  background-color: #F2F2F2;
+  color: #0073E6;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
