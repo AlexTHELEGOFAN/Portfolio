@@ -1,46 +1,55 @@
+// "use client"; // This is a client component 👈🏽
+
+import React from "react";
+
 import RootLayout from "@/components/layout/rootLayout";
 import PageIntro from "@/components/pageIntro";
 import TeamSection from "@/components/team/teamSection";
 import ContactSection from "@/components/contact/contactSection";
 import ProjectSection from "@/components/project/projectSection";
-import React from "react";
+import PartnerSection from "@/components/partners/partnerSection";
+import {aboutUsImage, contentData, homeVideo, ourProjectsImage} from "@/assets/data/data";
 
 export default function AboutUsPage() {
-    const AboutUsText = (
-        <span className="text-base mb-6">
-            Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi. Quam a dictum vitae tellus placerat dictumst venenatis vitae velit. Sit cras laoreet diam nisi purus pulvinar. Nec at purus cursus id viverra commodo tortor sollicitudin.
-            <br/><br/>
-            Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi. Quam a dictum vitae tellus placerat dictumst venenatis vitae velit. Sit cras laoreet diam nisi purus pulvinar. Nec at purus cursus id viverra commodo tortor sollicitudin.
-            <br/><br/>
-            “Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing tellus placerat dictumst venenatis vitae velit. Sit cras laoreet diam nisi purus pulvinar. Nec at purus cursus id viverra commodo tortor sollicitudin.”
-            <br/><br/>
-            Contactez-nous dès maintenant : innolab@atos.net
-        </span>
-    );
+    // Extraire tous les projets
+    const allProjects = contentData.sectorsWithProjects.flatMap(sector => sector.projects);
 
-    const AboutUsImage = (
-        <video controls className="w-full">
-            <source src="movie.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-        </video>
-        // Ou pour une image :
-        // <img src="path/to/image.jpg" alt="Description" />
-    );
+    // Sélectionner un projet aléatoire
+    const randomProject = allProjects[Math.floor(Math.random() * allProjects.length)];
 
     return (
         <RootLayout>
             <div className="content">
                 {/*A propos*/}
-                <PageIntro title={"Qui sommes-nous ?"} text={AboutUsText} hasButton={false} media={AboutUsImage}/>
+                <PageIntro
+                    title={"Qui sommes-nous ?"}
+                    text={contentData.aboutUsText.text}
+                    hasButton={false}
+                    elementId={contentData.aboutUsText.text}
+                />
 
                 {/* Equipe */}
-                <TeamSection hasText={true}/>
+                <div id="team-section">
+                    <TeamSection hasText={true}/>
+                </div>
 
                 {/*Projet aléatoire*/}
-                <ProjectSection project={"Prédiction pieds diabétiques"}/>
+                <ProjectSection
+                    project={randomProject.name}
+                    text={randomProject.text}
+                    media={randomProject.media}
+                    mediaPlacement={"left"}
+                    hasButton={true}
+                    hasCurve={true}
+                    link={randomProject.link}
+                />
 
+                {/*Partenaires*/}
+                <div id="partner-section">
+                    <PartnerSection hasButton={false}/>
+                </div>
                 {/* Contact */}
-                <ContactSection phrase={"A vos côtés pour votre projet"}/>
+                <ContactSection phrase={"Partenaires de votre réussite, dès aujourd'hui"}/>
             </div>
         </RootLayout>
     );

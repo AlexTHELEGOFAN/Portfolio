@@ -1,3 +1,5 @@
+import "./curve.scss";
+
 import React from 'react';
 
 const Curve = ({color = "#0073E6", rotation = 0}) => {
@@ -5,11 +7,10 @@ const Curve = ({color = "#0073E6", rotation = 0}) => {
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 1200"
+            className="curve"
             style={{
                 enableBackground: "new 0 0 1200 1200",
-                transform: `rotate(${rotation}deg)`, // Rotation en fonction de l'angle
-                width: "100px", // Taille ajustable
-                height: "100px",
+                transform: `rotate(${rotation}deg)`,
             }}
             xmlSpace="preserve"
         >

@@ -35,30 +35,50 @@
 
 body {
   background: var(--white-background);
+  //font-weight: 500;
+  //font-family: "Biennale", sans-serif;
+  font-weight: 500;
   font-family: "Raleway", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--dark-blue);
 }
 
 .content {
   flex-grow: 1;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
 .section-white {
   background: var(--white-section);
-  padding: 60px 170px;
+  padding: 60px 200px;
+
+  @media (max-width: 1400px) {
+    padding: 60px 100px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 60px;
+  }
+
+  @media (max-width: 640px) {
+    padding: 20px 16px;
+  }
 }
 
 .section-blue {
   background: var(--dark-blue);
-  padding: 60px 170px;
-}
+  padding: 60px 200px;
 
-.section-end {
-  background: var(--blue);
-  padding: 60px 170px;
+  @media (max-width: 1400px) {
+    padding: 60px 100px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 60px;
+  }
+
+  @media (max-width: 640px) {
+    padding: 20px 16px;
+  }
 }
 
 .button-blue-icon-right {

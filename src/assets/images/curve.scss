@@ -1,0 +1,15 @@
+.curve {
+  width: 100px; // Taille ajustable
+  height: 100px;
+
+
+  @media (max-width: 992px) {
+    width: 75px; // Taille ajustable
+    height: 75px;
+  }
+
+  @media (max-width: 640px) {
+    width: 50px; // Taille ajustable
+    height: 50px;
+  }
+}

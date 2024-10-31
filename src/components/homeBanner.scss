@@ -1,10 +1,30 @@
 .banner {
-  padding-top: 8.5rem;
-  padding-left: 12.5rem;
+  padding-top: 9.25rem; // 148
+  padding-left: 12.5rem; // 200
   padding-right: 12.5rem;
   color: var(--white-text);
-  height: 45rem; // 46.5rem = 744px
+  height: 32rem; // 46.5rem = 744px
   position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  z-index: 9;
+
+  @media (max-width: 1024px) {
+    padding-top: 6rem; // px;
+    padding-left: 9rem; // px;
+    padding-right: 9rem; // px;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 4rem; // px;
+    padding-left: 4rem; // px;
+    padding-right: 4rem; // px;
+  }
+
+  @media (max-width: 640px) {
+    padding-top: 2rem; // 32px;
+    padding-left: 1rem; // 16px;
+    padding-right: 1rem; // 16px;
+  }
 }
 
 .overlay {
@@ -27,34 +47,101 @@
   z-index: 0;
 }
 
-.big-title {
-  font-size: 2.5rem;
+.banner-title {
+  font-size: 2.5rem; // 40px;
+  padding-bottom: 1rem; // 16px;
   font-weight: bold;
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 2rem; // 32px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 1.5rem; // 24px;
+  }
 }
 
-.slogan {
-  font-size: 2rem;
+.banner-subtitle {
+  font-size: 2rem; // 32px;
   font-weight: normal;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; // 24px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 20px;
+  }
 }
 
 .scroll-animation {
-  width: 40px;
-  height: 60px;
-  margin-bottom: 8.5rem;
+  margin-bottom: 40px;
   cursor: pointer;
+
+  .scroll-animation-desktop {
+    width: 60px;
+    height: 80px;
+    display: none;
+  }
+
+  .scroll-animation-mobile {
+    display: none;
+  }
+
+  @media (min-width: 769px) {
+    .scroll-animation-desktop {
+      display: block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .scroll-animation-mobile {
+      display: block;
+    }
+  }
+
+  .bounce {
+    animation: bounce 2s infinite;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 .curve {
-  width: 50px;
-  height: 50px;
-
   &.bottom-right {
-    bottom: 50px; // Ajustez la distance du bas
-    right: 150px; // Ajustez la distance de la droite
+    bottom: 0;
+    right: 100px;
+
+    @media (max-width: 992px) {
+      right: 75px;
+    }
+
+    @media (max-width: 640px) {
+      right: 50px;
+    }
   }
 
   &.second {
-    bottom: 150px; // Ajustez la distance du bas pour la deuxième courbe
-    right: 50px; // Ajustez la distance de la droite pour la deuxième courbe
+    bottom: 100px;
+    right: 0;
+
+    @media (max-width: 992px) {
+      bottom: 75px;
+    }
+
+    @media (max-width: 640px) {
+      bottom: 50px;
+    }
   }
 }

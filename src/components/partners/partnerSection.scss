@@ -2,72 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-header {
-  color: var(--dark-blue);
-  background: var(--white-text);
+.section-partner {
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 
-  padding-left: 3rem /* 48px */
-;
-  padding-right: 3rem /* 48px */
-;
+    @media (max-width: 640px) {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+  }
+}
+
+.light-purple-curve {
+  &.bottom-right {
+    bottom: 0;
+    right: 100px;
+
+    @media (max-width: 992px) {
+      right: 75px;
+    }
+
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  &.second {
+    bottom: 100px;
+    right: 0;
+
+    @media (max-width: 992px) {
+      bottom: 75px;
+    }
+
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+}
+
+
+.partners-list {
+  gap: 2rem;
   width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media (min-width: 768px) {
+    gap: 5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+}
 
-  .logo-image {
-    object-fit: contain;
-    flex-shrink: 0;
-    margin-top: 0.5rem /* 8px */
-  ;
-    margin-bottom: 0.5rem /* 8px */
-  ;
-    max-width: 100%;
-    aspect-ratio: 2.78;
-  }
-
-  .navigation {
-    gap: 2.5rem /* 40px */
-  ;
-
-    .nav-list {
-      /* 28px */
-    ;
-      /* 28px */
-    ;
-      /* 32px */
-    ;
-      /* 32px */
-      padding: 2rem 1.75rem;
-
-      .list-icon {
-        color: var(--dark-blue);
-        padding-right: 0.5rem /* 8px */
-      ;
-      }
-
-      .nav-list-item {
-        left: 0;
-        top: 100%;
-        margin-top: 0.5rem /* 8px */
-      ;
-      }
-
-      .sub-menu-item {
-        /* 16px */
-      ;
-        /* 16px */
-      ;
-        /* 8px */
-      ;
-        /* 8px */
-        padding: 0.5rem 1rem;
-      }
-    }
-
-    .search-bar {
-      width: 2rem /* 32px */
-    ;
-      height: 2rem /* 32px */
-    ;
-    }
-  }
+.text-white-text {
+  color: var(--white-text);
 }

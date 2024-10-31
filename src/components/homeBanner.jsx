@@ -6,6 +6,8 @@ import scrollAnimation from "@/assets/lottie/scroll-animation.json";
 import Curve from "@/assets/images/Curve";
 import bannerImage from "@/assets/images/banner_image.jpg";
 import Image from "next/image";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faAngleDown} from "@fortawesome/free-solid-svg-icons";
 
 export default function HomeBanner() {
     const options = {
@@ -20,7 +22,7 @@ export default function HomeBanner() {
     const {View: ScrollAnimation} = useLottie(options);
 
     const handleScroll = () => {
-        window.scrollBy({top: 720, behavior: 'smooth'});
+        window.scrollBy({top: 520, behavior: 'smooth'});
     };
 
     return (
@@ -33,17 +35,22 @@ export default function HomeBanner() {
 
             <div className="relative z-20 flex flex-col justify-between h-full">
                 <div>
-                    <h1 className="big-title uppercase">
+                    <h1 className="banner-title">
                         Inno’Lab Lyon : la Co-innovation pour le futur
                     </h1>
 
-                    <span className="slogan">
+                    <span className="banner-subtitle">
                     Construisons ensemble les fondations de votre future réussite
                 </span>
                 </div>
 
                 <div className="scroll-animation flex justify-center mx-auto" onClick={handleScroll}>
-                    {ScrollAnimation}
+                    <div className="scroll-animation-desktop">
+                        {ScrollAnimation}
+                    </div>
+                    <div className="scroll-animation-mobile">
+                        <FontAwesomeIcon icon={faAngleDown} size="2xl" className="bounce"/>
+                    </div>
                 </div>
             </div>
 

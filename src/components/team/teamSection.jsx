@@ -1,3 +1,5 @@
+"use client"; // This is a client component 👈🏽
+
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
@@ -5,61 +7,82 @@ import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
 import "./teamSection.scss";
 import Curve from "@/assets/images/Curve";
 import TeamCard from "@/components/team/teamCard";
+import Carousel from "better-react-carousel";
+import Link from "next/link";
+import {contentData} from "@/assets/data/data";
 
-const members = [
-    {name: "Alex", work: "Dev", realPicture: "pic", legoPicture: "picl"},
-    {name: "Alex", work: "Dev", realPicture: "pic", legoPicture: "picl"},
-    {name: "Alex", work: "Dev", realPicture: "pic", legoPicture: "picl"}
-];
-
-export default function TeamSection({hasText = false}) {
+export default function TeamSection({hasButton}) {
     return (
-        <section className="section-blue flex flex-col w-full justify-start relative">
+        <section id={contentData.teamText.elementId}
+                 className="section-blue flex flex-col w-full justify-start relative">
             <div className="pink-curve absolute">
                 <Curve color="#EF5E82" rotation={270}/>
             </div>
-            <h3 className="text-2xl text-white-text font-bold mb-4">
-                L'équipe Inno'Lab
+            <h3 className={`text-2xl text-white-text font-bold ${!hasButton ? 'mb-8' : 'mb-4'}`}>
+                L&apos;équipe Inno&apos;Lab
             </h3>
 
-            {hasText && (
-                <div className="text-white-text">
-            <span className="text-base mb-6">
-            Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi. Nec at purus cursus id viverra commodo tortor sollicitudin.
-            <br/><br/>
-            Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi. Quam a dictum vitae tellus placerat dictumst venenatis vitae velit. Sit cras laoreet diam nisi purus pulvinar. Nec at purus cursus id viverra commodo tortor sollicitudin.
-                Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi. Quam a dictum vitae tellus placerat dictumst venenatis vitae velit. Sit cras laoreet diam nisi purus pulvinar. Nec at purus cursus id viverra commodo tortor sollicitudin.
-
-                <br/><br/>
-        </span>
+            {/*Team description*/}
+            {!hasButton && (
+                <div className="text-white-text mb-6">
+                    {contentData.teamText.text}
                 </div>
             )}
 
+            {/*Team members*/}
+            <div className="flex justify-center max-md:max-w-full mb-4">
+                <Carousel
+                    cols={6}
+                    rows={hasButton ? 1 : 2}
+                    gap={40}
+                    scrollSnap={true}
+                    showDots={false}
+                    mobileBreakpoint={200}
+                    responsiveLayout={[
+                        {
+                            breakpoint: 1200,
+                            cols: 4,
+                            gap: 40,
+                        },
+                        {
+                            breakpoint: 1024,
+                            cols: 3,
+                            gap: 20,
+                        },
+                        {
+                            breakpoint: 768,
+                            cols: 2,
+                            gap: 20,
+                        },
+                    ]}
+                >
+                    {contentData.team.map((member, index) => (
 
-            <div className="self-stretch justify-center mt-5 max-md:max-w-full">
-                <div className="flex gap-5 max-md:flex-col">
-                    {members.map((partner, index) => (
-                        <TeamCard key={index}
-                                  realPicture={members.realPicture}
-                                  legoPicture={members.legoPicture}
-                                  name={members.name}
-                                  work={members.work}/>
+                        <Carousel.Item key={index}>
+                            <TeamCard key={index}
+                                      realPicture={member.realPicture}
+                                      legoPicture={member.legoPicture}
+                                      name={member.name}
+                                      work={member.work}/>
+                        </Carousel.Item>
                     ))}
-                </div>
+                </Carousel>
+
             </div>
 
-
-            {!hasText && (
+            {hasButton && (
                 <div className="flex justify-center">
-                    <button className="button-blue-icon-right">
-                        Voir l’intégralité de l’équipe
+                    <Link href="/qui-sommes-nous#team-section">
+                        <button className="button-blue-icon-right">
+                            Voir l’intégralité de l’équipe
 
-                        <FontAwesomeIcon
-                            icon={faAngleRight}
-                            size="xl"
-                            className="ml-3"
-                        />
-                    </button>
+                            <FontAwesomeIcon
+                                icon={faAngleRight}
+                                size="xl"
+                                className="ml-3"
+                            />
+                        </button>
+                    </Link>
                 </div>
             )}
         </section>

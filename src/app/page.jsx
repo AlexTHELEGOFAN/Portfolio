@@ -1,77 +1,73 @@
+// Import des styles globaux
+import "./globals.scss";
+
+// Import des bibliothèques et composants
+import React from "react";
 import RootLayout from "@/components/layout/rootLayout";
 import HomeBanner from "@/components/homeBanner";
 import PageIntro from "@/components/pageIntro";
-import PartnerCard from "@/components/partners/partnerCard";
-import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import PartnerSection from "@/components/partners/partnerSection";
 import TeamSection from "@/components/team/teamSection";
 import ContactSection from "@/components/contact/contactSection";
-import CarrouselSection from "@/components/carrousel/carrouselSection";
 import ProjectsSection from "@/components/projectsList/projectsSection";
-
-import "./globals.scss";
 import SectorsSection from "@/components/sectorsList/sectorsSection";
-import React from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 import Curve from "@/assets/images/Curve";
+import {contentData, homeVideo} from "@/assets/data/data";
 
 export default function HomePage() {
-    const textVar = (
-        <span className="text-base mb-6">
-            Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi. Quam a dictum vitae tellus placerat dictumst venenatis vitae velit. Sit cras laoreet diam nisi purus pulvinar. Nec at purus cursus id viverra commodo tortor sollicitudin.
-            <br/><br/>
-            Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi. Quam a dictum vitae tellus placerat dictumst venenatis vitae velit. Sit cras laoreet diam nisi purus pulvinar. Nec at purus cursus id viverra commodo tortor sollicitudin.
-            <br/><br/>
-            “Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing tellus placerat dictumst venenatis vitae velit. Sit cras laoreet diam nisi purus pulvinar. Nec at purus cursus id viverra commodo tortor sollicitudin.”
-            <br/><br/>
-            Contactez-nous dès maintenant : innolab@atos.net
-        </span>
-    );
-
-    const mediaVar = (
-        <video controls className="w-full">
-            <source src="movie.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-        </video>
-        // Ou pour une image :
-        // <img src="path/to/image.jpg" alt="Description" />
-    );
 
     return (
         <RootLayout>
-            {/* Image bannière */}
+            {/* Bannière d'accueil */}
             <HomeBanner/>
 
             <div className="content">
-                {/*A propos*/}
-                <PageIntro title={"A propos de l'Inno'Lab"} text={textVar} hasButton={true} media={mediaVar}/>
+                {/* Introduction */}
+                <PageIntro
+                    title={"A propos de l'Inno'Lab"}
+                    text={contentData.homeText.text}
+                    hasButton
+                    media={homeVideo}
+                    elementId={contentData.homeText.id}
+                    // media={pdf}
+                    // mediaType="pdf"
+                />
 
-                {/*Partenaires*/}
-                <PartnerSection hasButton={true}/>
+                {/* Partenaires */}
+                <PartnerSection hasButton/>
 
                 {/*Domaines et projets*/}
                 <div className="section-white flex flex-col w-full justify-start relative">
-                    <SectorsSection hasCurve={false}/>
+                    {/* Décoration courbe */}
+                    <div className="absolute bottom-0 left-0">
+                        <Curve color="#663894" rotation={90}/>
+                    </div>
+
+                    {/* Sections des secteurs et des projets */}
+                    <SectorsSection
+                        link={"/"}
+                    />
                     <ProjectsSection/>
 
-                    <div className="flex justify-center">
-                        <button className="button-blue-icon-right items-center">
-                            Voir nos réalisations
-
-                            <FontAwesomeIcon
-                                icon={faAngleRight}
-                                size="xl"
-                                className="ml-3"
-                            />
-                        </button>
+                    {/* Bouton pour voir les réalisations */}
+                    <div className="flex justify-center mt-8">
+                        <Link href="/nos-projets">
+                            <button className="button-blue-icon-right flex items-center">
+                                Voir nos réalisations
+                                <FontAwesomeIcon icon={faAngleRight} size="xl" className="ml-3"/>
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
                 {/* Equipe */}
-                <TeamSection hasText={false}/>
+                <TeamSection hasButton/>
 
-                {/* Contact */}
-                <ContactSection/>
+                {/*/!* Contact *!/*/}
+                <ContactSection phrase={"A vos côtés pour votre projet"}/>
             </div>
         </RootLayout>
     );

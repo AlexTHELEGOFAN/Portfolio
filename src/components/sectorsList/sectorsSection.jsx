@@ -1,30 +1,52 @@
-import "./sectorsSection.scss";
+"use client"; // This is a client component 👈🏽
 
 import React from "react";
-import CarrouselSection from "@/components/carrousel/carrouselSection";
-import Curve from "@/assets/images/Curve";
+import Carousel from 'better-react-carousel'
+import SectorCard from "@/components/sectorsList/sectorCard";
 
+import "./sectorsSection.scss";
+import {contentData} from "@/assets/data/data";
 
-const sectors = [
-    {name: "Partenaire"},
-    {name: "Partenaire"},
-    {name: "Partenaire"}
-];
+export default function SectorsSection({link}) {
 
-export default function SectorsSection({title = false}) {
     return (
-        <section className="flex flex-col w-full justify-start relative">
-            <div className="purple-curve bottom-left absolute">
-                <Curve color="#663894" rotation={90}/>
-            </div>
-
-
-            <h3 className="text-2xl font-bold mb-4">
+        <section className="sectors-section flex flex-col relative">
+            <h3 className="title">
                 Nous innovons dans ces domaines
             </h3>
 
-            <div className="flex justify-center">
-                <CarrouselSection/>
+            <div className="flex justify-center w-full">
+                <Carousel
+                    cols={3}
+                    rows={1}
+                    gap={20}
+                    scrollSnap={true}
+                    showDots={false}
+                    mobileBreakpoint={640}
+                    responsiveLayout={[
+                        {
+                            breakpoint: 640,
+                            cols: 1,
+                            gap: 10,
+                        },
+                        {
+                            breakpoint: 1024,
+                            cols: 2,
+                            gap: 15,
+                        },
+                    ]}
+                >
+                    {contentData.sectorsWithProjects.map((sector, index) => (
+                        <Carousel.Item key={index}>
+                            <SectorCard key={index}
+                                        picture={sector.image}
+                                        name={sector.name}
+                                        text={sector.text}
+                                        link={link + sector.link}
+                            />
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
             </div>
 
         </section>

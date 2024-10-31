@@ -1,14 +1,111 @@
-.white-curve {
-  width: 50px;
-  height: 50px;
+.section-end {
+  background: var(--blue);
+  padding: 80px 170px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 
-  &.bottom-right {
-    bottom: 74px; // Ajustez la distance du bas
-    right: 74px; // Ajustez la distance de la droite
+  @media (max-width: 992px) {
+    padding: 60px 100px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  &.second {
-    bottom: 174px; // Ajustez la distance du bas pour la deuxième courbe
-    right: 174px; // Ajustez la distance de la droite pour la deuxième courbe
+  @media (max-width: 768px) {
+    padding: 40px 60px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 640px) {
+    padding: 40px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  //.white-curve {
+  //  &.bottom-right {
+  //    bottom: 20px;
+  //    right: 20px;
+  //
+  //    @media (max-width: 1200px) {
+  //      bottom: 36px;
+  //      right: 36px;
+  //    }
+  //
+  //    @media (max-width: 992px) {
+  //      bottom: 70px;
+  //      right: 70px;
+  //    }
+  //
+  //    @media (max-width: 768px) {
+  //      display: none;
+  //    }
+  //
+  //    @media (max-width: 640px) {
+  //      display: none;
+  //    }
+  //  }
+  //
+  //  &.second {
+  //    bottom: 120px;
+  //    right: 120px;
+  //
+  //    @media (max-width: 1200px) {
+  //      bottom: 136px;
+  //      right: 136px;
+  //    }
+  //
+  //    @media (max-width: 992px) {
+  //      bottom: 145px;
+  //      right: 145px;
+  //    }
+  //
+  //    @media (max-width: 768px) {
+  //      display: none;
+  //    }
+  //
+  //    @media (max-width: 640px) {
+  //      display: none;
+  //    }
+  //  }
+  //}
+
+  .title-content {
+    width: 25%;
+
+    @media (max-width: 992px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 640px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .text-content {
+    width: 65%;
+    padding-right: 100px;
+
+    @media (max-width: 992px) {
+      width: 70%;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      width: 100%;
+    }
   }
 }
