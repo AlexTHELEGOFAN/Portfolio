@@ -22,7 +22,8 @@
     "react-lottie": "^1.2.4",
     "react-pdfobject": "^1.2.0",
     "sass": "^1.79.4",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "eslint": "^8",
