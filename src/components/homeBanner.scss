@@ -4,7 +4,6 @@
   padding-right: 12.5rem;
   color: var(--white-text);
   height: 32rem; // 46.5rem = 744px
-  position: relative;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   z-index: 9;
 
@@ -28,7 +27,6 @@
 }
 
 .overlay {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -39,7 +37,6 @@
 }
 
 .background-image {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

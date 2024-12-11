@@ -4,7 +4,7 @@ import SectorSection from "@/components/sector/sectorSection";
 import ContactSection from "@/components/contact/contactSection";
 import React from "react";
 import ProjectSection from "@/components/project/projectSection";
-import {ourProjectsImage, contentData} from "@/assets/data/data";
+import {contentData} from "@/assets/data/data";
 
 
 export default function OurProjectsPage() {
@@ -27,6 +27,7 @@ export default function OurProjectsPage() {
                             <ProjectSection key={projectIndex} project={project.name} text={project.text}
                                             elementId={project.elementId}
                                             media={project.media}
+                                            mediaType={project.mediaType}
                                             mediaPlacement={project.mediaPlacement}
                                             hasButton={false}
                                             hasCurve={false}/>

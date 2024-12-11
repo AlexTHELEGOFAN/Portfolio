@@ -8,7 +8,7 @@ import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
 import SectorSection from "@/components/sector/sectorSection";
 import Curve from "@/assets/images/Curve";
 import Link from "next/link";
-import {ourWorkImage, contentData} from "@/assets/data/data";
+import {contentData} from "@/assets/data/data";
 
 export default function OurWorkPage() {
     return (

@@ -18,9 +18,10 @@ export default function sectorSection({title, text, elementId}) {
             <h3 className="text-2xl text-white-text font-bold mb-4">
                 {title}
             </h3>
-            <span className="text-white-text mb-6">
-            {text}
-</span>
+            <span className="text-white-text mb-6"
+                  dangerouslySetInnerHTML={{__html: text}}>
+
+            </span>
             <div className="flex justify-center max-md:max-w-full">
                 <Carousel
                     cols={3}
@@ -48,7 +49,9 @@ export default function sectorSection({title, text, elementId}) {
                                 <Image src={workshop.image} alt={workshop.name} width={480} height={300} quality={100}/>
                                 <div className="workshop-card flex flex-col justify-start">
                                     <span className="workshop-card-title flex">{workshop.name}</span>
-                                    <span className="workshop-card-text flex">{workshop.text}</span>
+                                    <span className="workshop-card-text flex"
+                                          dangerouslySetInnerHTML={{__html: workshop.text}}>
+                                    </span>
                                 </div>
                             </div>
                         </Carousel.Item>

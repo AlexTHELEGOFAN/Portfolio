@@ -8,7 +8,7 @@ import TeamSection from "@/components/team/teamSection";
 import ContactSection from "@/components/contact/contactSection";
 import ProjectSection from "@/components/project/projectSection";
 import PartnerSection from "@/components/partners/partnerSection";
-import {aboutUsImage, contentData, homeVideo, ourProjectsImage} from "@/assets/data/data";
+import {contentData} from "@/assets/data/data";
 
 export default function AboutUsPage() {
     // Extraire tous les projets
@@ -38,6 +38,7 @@ export default function AboutUsPage() {
                     project={randomProject.name}
                     text={randomProject.text}
                     media={randomProject.media}
+                    mediaType={randomProject.mediaType}
                     mediaPlacement={"left"}
                     hasButton={true}
                     hasCurve={true}

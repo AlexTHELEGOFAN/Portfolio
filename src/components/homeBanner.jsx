@@ -27,8 +27,9 @@ export default function HomeBanner() {
 
     return (
         <div className="banner flex flex-col w-full bg-blue relative">
-            <div className="background-image absolute inset-0 z-0">
-                <Image src={bannerImage} alt="" layout="fill" objectFit="cover" quality={100}/>
+            <div className="background-image absolute">
+                <Image src={bannerImage} alt="" fill="true" objectPosition="center 20%" objectFit="cover"
+                       quality={100}/>
             </div>
 
             <div className="overlay absolute inset-0 bg-black opacity-60 z-10"></div>
@@ -36,11 +37,11 @@ export default function HomeBanner() {
             <div className="relative z-20 flex flex-col justify-between h-full">
                 <div>
                     <h1 className="banner-title">
-                        Inno’Lab Lyon : la Co-innovation pour le futur
+                        Découvrez la cellule innovation santé de Lyon
                     </h1>
 
                     <span className="banner-subtitle">
-                    Construisons ensemble les fondations de votre future réussite
+                    Donnez vie à vos projets
                 </span>
                 </div>
 

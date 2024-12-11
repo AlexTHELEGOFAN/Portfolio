@@ -2,7 +2,7 @@
 
 import "./pageIntro.scss";
 
-import React, {useEffect, useRef} from "react";
+import React from "react";
 import Curve from "@/assets/images/Curve";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
@@ -24,8 +24,7 @@ export default function PageIntro({title, text, hasButton = false, media, elemen
                         {title}
                     </h3>
 
-                    <span className="description text-justify">
-                        {text}
+                    <span className="description text-justify" dangerouslySetInnerHTML={{__html: text}}>
                     </span>
 
                     {hasButton && (

@@ -1,13 +1,25 @@
 "use client"; // This is a client component 👈🏽
 
 import "./projectSection.scss";
+
 import React from "react";
 import Curve from "@/assets/images/Curve";
 import Link from "next/link";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
-export default function ProjectSection({project, text, elementId, link, hasCurve, hasButton, media, mediaPlacement}) {
+export default function ProjectSection({
+                                           project,
+                                           text,
+                                           elementId,
+                                           link,
+                                           hasCurve,
+                                           hasButton,
+                                           media,
+                                           mediaType,
+                                           mediaPlacement
+                                       }) {
     return (
         <section id={elementId} className="section-white project-section flex justify-between relative">
             <div className={`content-container flex ${mediaPlacement === "right" ? "cc-right" : "cc-left"}`}>
@@ -24,8 +36,7 @@ export default function ProjectSection({project, text, elementId, link, hasCurve
                     </h3>
 
 
-                    <span className="description text-justify mb-6">
-                        {text}
+                    <span className="description text-justify mb-6" dangerouslySetInnerHTML={{__html: text}}>
                     </span>
 
                     {hasButton && (
@@ -39,17 +50,23 @@ export default function ProjectSection({project, text, elementId, link, hasCurve
                         </div>
                     )}
                 </div>
-
-                <div className="media-container flex justify-center items-center">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/Z4bW5hBhzoY"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
-                </div>
+                {media &&
+                    <div className="media-container flex justify-center items-center">
+                        {mediaType === "video" &&
+                            <iframe
+                                width="560"
+                                height="315"
+                                src={media.src}
+                                title={media.title}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        }
+                        {mediaType === "image" &&
+                            <Image src={media.src} alt={media.title} quality={100}/>
+                        }
+                    </div>
+                }
             </div>
 
             {hasButton && (

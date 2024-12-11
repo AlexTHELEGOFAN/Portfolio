@@ -39,8 +39,9 @@ export default function ProjectsSection() {
                             <Carousel.Item key={`${sectorIndex}-${projectIndex}`}>
                                 <ProjectCard
                                     key={`${sectorIndex}-${projectIndex}`}
-                                    picture={project.image}
-                                    tag={project.tag}
+                                    image={project.image}
+                                    imageFit={project.imageFit}
+                                    tags={project.tags}
                                     name={project.name}
                                     text={project.text}
                                     link={project.link}

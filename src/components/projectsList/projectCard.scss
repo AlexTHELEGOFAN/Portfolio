@@ -3,6 +3,9 @@
   width: 100%;
 
   .project-image {
+    top: 0;
+    left: 0;
+    z-index: 0;
     width: 100%;
     height: 100%;
   }
@@ -10,14 +13,13 @@
   .project-card {
     background-color: var(--white-text);
     padding: 16px 10px;
+    min-height: 400px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 
     .project-card-tag {
       font-size: 14px;
-      padding: 4px 10px;
+      padding: 4px 8px;
+      margin-right: 8px;
       background-color: var(--light-blue);
       margin-bottom: 0.75rem;
     }
