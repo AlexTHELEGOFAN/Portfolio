@@ -1,5 +1,5 @@
 {
-  "name": "site_vitrine_innolab",
+  "name": "protfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,17 +13,20 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@pdftron/webviewer": "^10.12.0",
+    "@svgr/webpack": "^8.1.0",
     "better-react-carousel": "^1.1.2",
     "fuse.js": "^7.0.0",
     "lottie-react": "^2.4.0",
-    "next": "14.2.11",
+    "next": "^14.2.22",
     "react": "^18",
     "react-dom": "^18.3.1",
     "react-lottie": "^1.2.4",
     "react-pdfobject": "^1.2.0",
     "sass": "^1.79.4",
     "scss": "^0.2.4",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "three": "^0.172.0",
+    "vanta": "^0.5.24"
   },
   "devDependencies": {
     "eslint": "^8",

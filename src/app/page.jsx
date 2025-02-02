@@ -1,74 +1,60 @@
-// Import des styles globaux
+"use client"; // This is a client component 👈🏽
+
 import "./globals.scss";
 
-// Import des bibliothèques et composants
-import React from "react";
 import RootLayout from "@/components/layout/rootLayout";
 import HomeBanner from "@/components/homeBanner";
-import PageIntro from "@/components/pageIntro";
-import PartnerSection from "@/components/partners/partnerSection";
-import TeamSection from "@/components/team/teamSection";
-import ContactSection from "@/components/contact/contactSection";
-import ProjectsSection from "@/components/projectsList/projectsSection";
-import SectorsSection from "@/components/sectorsList/sectorsSection";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
-import Curve from "@/assets/images/Curve";
-import {contentData, homeVideo} from "@/assets/data/data";
+import AboutMe from "@/components/aboutMe";
+import ExperiencesSection from "@/components/experiences/experiencesSection";
+import SectorSkills from "@/components/skills/sectorSkills";
 
-export default function HomePage() {
+import Github from "@/assets/svg/github-white.svg";
+import Linkedin from "@/assets/svg/linkedin-white.svg";
+import VantaBackground from "@/components/VantaBackground";
+
+function HomePage() {
 
     return (
         <RootLayout>
+            <ul className="top-buttons flex flex-wrap justify-between self-stretch fixed">
+                <li>
+                    <a className="social-media-button flex mr-4" href="https://github.com/AlexTHELEGOFAN" target="_blank">
+                        <Github/>
+                    </a>
+                </li>
+                <li>
+                    <a className="social-media-button flex"
+                       href="https://www.linkedin.com/in/alexandre-pozzi-29875a201/"
+                       target="_blank"
+                    >
+                        <Linkedin/>
+                    </a>
+                </li>
+                <button className="cv-button flex items-center justify-center absolute">
+                    {/*Curriculum Vitae*/}
+                    {/*<FontAwesomeIcon icon={faAngleRight} size="xl" className="ml-3"/>*/}
+                </button>
+            </ul>
+
             {/* Bannière d'accueil */}
             <HomeBanner/>
 
             <div className="content">
-                {/* Introduction */}
-                <PageIntro
-                    title={"A propos de l'Inno'Lab"}
-                    text={contentData.homeText.text}
-                    hasButton
-                    media={homeVideo}
-                    elementId={contentData.homeText.id}
-                    // media={pdf}
-                    // mediaType="pdf"
-                />
 
-                {/* Partenaires */}
-                <PartnerSection hasButton/>
+                <AboutMe/>
+
+                <ExperiencesSection/>
+
+                <SectorSkills/>
 
                 {/*Domaines et projets*/}
                 <div className="section-white flex flex-col w-full justify-start relative">
-                    {/* Décoration courbe */}
-                    <div className="absolute bottom-0 left-0">
-                        <Curve color="#663894" rotation={90}/>
-                    </div>
-
-                    {/* Sections des secteurs et des projets */}
-                    <SectorsSection
-                        link={"/"}
-                    />
-                    <ProjectsSection/>
-
-                    {/* Bouton pour voir les réalisations */}
-                    <div className="flex justify-center mt-8">
-                        <Link href="/nos-projets">
-                            <button className="button-blue-icon-right flex items-center">
-                                Voir nos réalisations
-                                <FontAwesomeIcon icon={faAngleRight} size="xl" className="ml-3"/>
-                            </button>
-                        </Link>
-                    </div>
+                    {/* Sections des projets */}
                 </div>
 
-                {/* Equipe */}
-                <TeamSection hasButton/>
-
-                {/*/!* Contact *!/*/}
-                <ContactSection phrase={"A vos côtés pour votre projet"}/>
             </div>
         </RootLayout>
     );
 }
+
+export default HomePage;

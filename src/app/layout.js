@@ -6,6 +6,11 @@ export const metadata = {
 export default function RootLayout({children}) {
     return (
         <html lang="en">
+        <head>
+            <title>Portfolio</title>
+            {/*<script src="../assets/threejs/three.min.js"></script>*/}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js"></script>
+        </head>
         <body>{children}</body>
         </html>
     )

@@ -3,8 +3,8 @@
   padding-left: 12.5rem; // 200
   padding-right: 12.5rem;
   color: var(--white-text);
-  height: 32rem; // 46.5rem = 744px
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  height: 40rem;
+  //box-shadow: 0 4px 60px rgba(0, 0, 0, 0.9);
   z-index: 9;
 
   @media (max-width: 1024px) {
@@ -41,8 +41,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
 }
+
+.image-container {
+  width: 300px; /* Dimensions identiques */
+  height: 300px; /* Dimensions identiques */
+  border-radius: 50%; /* Cercle parfait */
+  overflow: hidden; /* Contenir l'image à l'intérieur du cercle */
+  position: relative; /* Nécessaire pour contenir les enfants correctement */
+}
+
+.profile-image {
+  width: 100%; /* Ajuster l'image au conteneur */
+  height: 100%; /* Ajuster l'image au conteneur */
+}
+
 
 .banner-title {
   font-size: 2.5rem; // 40px;
@@ -112,33 +125,5 @@
   }
   60% {
     transform: translateY(-5px);
-  }
-}
-
-.curve {
-  &.bottom-right {
-    bottom: 0;
-    right: 100px;
-
-    @media (max-width: 992px) {
-      right: 75px;
-    }
-
-    @media (max-width: 640px) {
-      right: 50px;
-    }
-  }
-
-  &.second {
-    bottom: 100px;
-    right: 0;
-
-    @media (max-width: 992px) {
-      bottom: 75px;
-    }
-
-    @media (max-width: 640px) {
-      bottom: 50px;
-    }
   }
 }

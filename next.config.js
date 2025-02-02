@@ -5,13 +5,19 @@ const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
     output: "standalone",
-    webpack: (config, options) => {
-        config.module.rules.push({
-            test: /\.(pdf)$/,
-            type: "asset/resource",
-        });
+    images: {
+        dangerouslyAllowSVG: true,
+        contentDispositionType: 'attachment',
+        contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    },
+    webpack: (config) => {
+            config.module.rules.push({
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
+            });
+
         return config;
     },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

@@ -1,9 +1,5 @@
-import {faAngleDown} from "@fortawesome/free-solid-svg-icons";
 import domainAi from "@/assets/images/domain_ia.jpg";
 import domainVr from "@/assets/images/domain_vr.png";
-import chuLogo from "@/assets/images/chu.png";
-import simon from "@/assets/images/simon.jpg";
-import lego from "@/assets/images/lego.png";
 import projectGadImage from "@/assets/images/project_ai_gad.png";
 import projectPiedsImage from "@/assets/images/project_ai_pieds.png";
 import projectCIMImage from "@/assets/images/project_ai_cim.png";
@@ -11,80 +7,35 @@ import projectJNJN from "@/assets/images/project_jn_jn.png";
 import projectVRRadioImage from "@/assets/images/project_vr_radio.png";
 import projectVRInfirmiersImage from "@/assets/images/project_vr_infirmiers.png";
 import projectVRVaccinImage from "@/assets/images/project_vr_vaccin.png";
-import workshopHackingHealth from "@/assets/images/workshop_hacking_health.jpg"
-// ###
-// HEADER ------------------------------------------------------------------
-// ###
 
-export const navItems = [
-    {label: "Qui sommes-nous ?", href: "/qui-sommes-nous"},
-    {label: "Que faisons-nous ?", href: "/que-faisons-nous"},
-    {
-        label: "Nos projets",
-        icon: faAngleDown,
-        size: "lg",
-        href: "/nos-projets",
-        subMenu: [
-            {label: 'Intelligence Artificielle', href: '/nos-projets#intelligence-artificielle'},
-            {label: 'Jumeau Numérique organisationnel', href: '/nos-projets#jumeau-numerique-organisationnel'},
-            {label: 'Réalité Immersive', href: '/nos-projets#realite-immersive'}
-        ]
-    },
-    {label: "Contactez nous", href: "mailto:contact@innolab.com?subject=Contact&body=Bonjour,"}
-];
+import idComLogo from "@/assets/images/idcom-blue.png";
+import idComLogo2 from "@/assets/images/idcom-logo.jpg"
+import xefiLogo from "@/assets/images/xefi-white.png";
+import xefiLogo2 from "@/assets/images/xefi-logo2.png"
+import atosLogo from "@/assets/images/atos-logo.png";
+import atosLogo2 from "@/assets/images/atos-logo2.jpeg"
 
+import Css3 from "../svg/Css3"
+// import Css3 from "@/assets/svg/Css3"
 
-// ###
-// ACCUEIL ------------------------------------------------------------------
-// ###
-//
-export const homeVideo =
-    {
-        src: "https://www.youtube.com/embed/Z4bW5hBhzoY",
-        title: "YouTube video player",
-        mediaType: "video"
-    }
-
-// ###
-// QUI SOMMES NOUS ------------------------------------------------------------------
-// ###
-
-export const aboutUsImage = [
-    {
-        src: "https://www.youtube.com/embed/Z4bW5hBhzoY",
-        title: "YouTube video player",
-        mediaType: "video"
-    }
-]
-
-// ###
-// QUE FAISONS NOUS ------------------------------------------------------------------
-// ###
-
-export const ourWorkImage =
-    {
-        src: "https://www.youtube.com/embed/Z4bW5hBhzoY",
-        title: "YouTube video player",
-        mediaType: "video"
-    }
-
-// ###
-// NOS PROJETS ------------------------------------------------------------------
-// ###
-
-export const ourProjectsImage =
-    {
-        src: "https://www.youtube.com/embed/Z4bW5hBhzoY",
-        title: "YouTube video player",
-        mediaType: "video"
-    }
-// Ou pour une image :
-// <img src="path/to/image.jpg" alt="Description" />
-
-
-// ###
-// DONNEES QUI PEUVENT ETRE RECHERCHEES ------------------------------------------------------------------
-// ###
+import dockerLogo from "@/assets/svg/Docker.svg";
+import figmaLogo from "@/assets/svg/Figma.svg";
+import gitLogo from "@/assets/svg/Git.svg";
+import githubLogo from "@/assets/svg/Github.svg";
+import htmlLogo from "@/assets/svg/Html5.svg";
+import illustratorLogo from "@/assets/svg/Illustrator.svg";
+import jestLogo from "@/assets/svg/Jest.svg";
+import jiraLogo from "@/assets/svg/Jira.svg";
+import jsLogo from "@/assets/svg/Js.svg";
+import mysqlLogo from "@/assets/svg/Mysql.svg";
+import photoshopLogo from "@/assets/svg/Photoshop.svg";
+import phpLogo from "@/assets/svg/Php.svg";
+import postmanLogo from "@/assets/svg/Postman.svg";
+import reactLogo from "@/assets/svg/React.svg";
+import swaggerLogo from "@/assets/svg/Swagger.svg";
+import tailwindLogo from "@/assets/svg/Tailwindcss.svg";
+import vsCodeLogo from "@/assets/svg/Vscode.svg";
+import Css from "@/assets/svg/Css3";
 
 export const contentData =
     {
@@ -96,12 +47,13 @@ export const contentData =
                 id: "homeText",
                 elementId: "a-propos",
                 link: "/#a-propos",
-                name: "A propos de l'Inno'Lab",
-                title: "A propos de l'Inno'Lab",
+                name: "A propos de moi",
+                title: "A propos de moi",
                 searchable: true,
-                text: "La cellule innovation santé (Inno'Lab) de Lyon, membre d'un réseau de 12 InnoLabs d'Atos, est spécialisé dans la santé et mène des projets dans l'<strong>intelligence artificielle</strong> et la data, ainsi que la <strong>réalité virtuelle et augmentée</strong>, co-construits avec les patients, les professionnels de santé et les institutions.<br/><br/>" +
-                    "Elle collabore avec des partenaires clés comme les CHU de Paris, Lyon ou St Etienne, les laboratoires de recherche universitaires et des acteurs comme les Agences Régionales de Santé (ARS), tout en étant référencé dans les centrales d'achat publiques.<br/><br/>" +
-                    "C’est une petite équipe agile qui s’appuie sur 400 collaborateurs d’Atos qui travaillent dans le secteur de la santé et ont réalisé des projets majeurs tels que Mon espace santé, le Dossier Patient Informatisé (DPI) Easily, et des solutions d'imagerie médicale.",
+                text: "Actuellement alternant chez Atos en Master EISI (Expertise Informatique et Systèmes d’Information) à l’EPSI, je suis passionné par le développement web et aspire à devenir Lead Développeur Full Stack / Chef de projet technique.<br/><br/>" +
+                    "Grâce à mes expériences, j’ai développé des compétences en conception et développement d’applications, ainsi qu’en gestion de projet. Doté d’un bon sens relationnel et d’une réelle autonomie, je m’intègre facilement au sein d’équipes pluridisciplinaires.<br/><br/>" +
+                    "Mon objectif est de renforcer mes compétences actuelles afin de contribuer de manière significative à la réussite de mon futur employeur. Je suis également intéressé par d'autres domaines tels que l’IA, la Data, l’UI/UX et le management."
+
             },
 
         // TODO
@@ -298,169 +250,81 @@ export const contentData =
                 ]
             }
         ],
-        // ###
-        // QUI SOMMES NOUS ------------------------------------------------------------------
-        // ###
-        aboutUsText:
-            {
-                id: "aboutUsText",
-                elementId: "intro",
-                link: "/qui-sommes-nous#intro",
-                title: "Qui sommes nous ?",
-                searchable: true,
-                text: "Qui sommes nous Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi." +
-                    "Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi."
-            },
 
-        ourWorkText:
+        experiences: [
             {
-                id: "ourWorkText",
-                elementId: "intro",
-                link: "/que-faisons-nous#intro",
-                title: "Que faisons nous ?",
-                searchable: true,
-                text: "Que faisons nous Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi." +
-                    "Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi."
+                name: "IDCOM",
+                text: "Avril - juin 2022<br/><br/>" +
+                    "Stage de fin de DUT chez IDCOM en tant que designer et développeur WordPress",
+                logoPath: idComLogo2
+            },
+            {
+                name: "XEFI",
+                text: "Août 2022 - octobre 2023<br/><br/>" +
+                    "Alternance chez XEFI au service software en tant que développeur front-end React",
+                logoPath: xefiLogo2
+            },
+            {
+                name: "ATOS",
+                text: "Octobre 2023 - présent<br/><br/>" +
+                    "Alternance chez Atos dans le groupe Inno'Lab Lyon en tant que développeur full stack Angular",
+                logoPath: atosLogo2
+            },
+        ],
 
-            },
-        ourWorkshopsText:
+        skillGroups: [
             {
-                id: "ourWorkshopsText",
-                elementId: "ateliers",
-                link: "/que-faisons-nous#ateliers",
-                title: "Nous effectuons des ateliers",
-                searchable: true,
-                text: "Nous effectuons des ateliers Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi." +
-                    "Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi."
-            },
-        workshops: [
-            {
-                id: "atelier-sido",
-                elementId: "atelier-sido",
-                link: "/que-faisons-nous#ateliers",
-                name: "Atelier veille Sido 2024",
-                title: "Atelier",
-                searchable: true,
-                image: workshopHackingHealth,
-                text: "Sido Nous créeons des expériences immersives qui permettent la simulation et l’entraînement."
+                category: "Développement front-end",
+                items: [
+                    { name: "HTML",  logoPath: Css3, level:"3" },
+                    { name: "CSS", logoPath: Css3, level:"3" },
+                    { name: "Bootstrap", logoPath: Css3, level:"2" },
+                    { name: "Tailwind CSS", logoPath: tailwindLogo, level:"3" },
+                    { name: "JavaScript", logoPath: jsLogo, level:"3" },
+                    { name: "React", logoPath: reactLogo, level:"2" },
+
+                ],
             },
             {
-                id: "atelier-medecins",
-                elementId: "atelier-medecins",
-                link: "/que-faisons-nous#ateliers",
-                name: "Ateliers avec médecins",
-                title: "Atelier",
-                searchable: true,
-                image: workshopHackingHealth,
-                text: "médic Nous créeons des expériences immersives."
+                category: "Développement back-end",
+                items: [
+                    { name: "PHP", logoPath: phpLogo, level:"1" },
+                    { name: "Laravel", logoPath: phpLogo, level:"1" },
+                    { name: "Express.js", logoPath: phpLogo, level:"1" },
+                    { name: "Angular", logoPath: phpLogo, level:"3" },
+                    { name: "Java", logoPath: phpLogo, level:"2" },
+                ],
             },
             {
-                id: "vr-medecins",
-                elementId: "vr-medecins",
-                link: "/que-faisons-nous#ateliers",
-                name: "Réalité immersive",
-                title: "Atelier",
-                searchable: true,
-                image: workshopHackingHealth,
-                text: "santé Nous créeons des expériences immersives qui permettent la simulation et l’entraînement. Nous créeons des expériences immersives qui permettent la simulation et l’entraînement."
+                category: "Autres outils",
+                items: [
+                    { name: "Visual Studio Code", logoPath: vsCodeLogo, level:"2" },
+                    { name: "WebStorm", logoPath: vsCodeLogo, level:"3" },
+                    { name: "GIT", logoPath: gitLogo, level:"3" },
+                    { name: "Github", logoPath: githubLogo, level:"3" },
+                    { name: "Gitlab", logoPath: githubLogo, level:"2" },
+                    { name: "Docker", logoPath: dockerLogo, level:"3" },
+                    { name: "Postman", logoPath: postmanLogo, level:"3" },
+                    { name: "Swagger", logoPath: swaggerLogo, level:"2" },
+                    { name: "Jest",  logoPath: jsLogo, level:"3" },
+                    { name: "Jasmine", logoPath: jsLogo, level:"2" },
+                ],
+            },
+            {
+                category: "Design",
+                items: [
+                    { name: "Figma", logoPath: figmaLogo, level:"3" },
+                    { name: "Photoshop", logoPath: photoshopLogo, level:"1" },
+                    { name: "Illustrator",  logoPath: illustratorLogo, level:"1" },
+                ],
+            },
+            {
+                category: "Gestion de projet",
+                items: [
+                    { name: "JIRA", logoPath: jiraLogo, level:"3" },
+                ],
             }
+
         ],
-        ourProjectsText:
-            {
-                id: "ourProjectsText",
-                elementId: "nos-projets-intro",
-                link: "/nos-projets",
-                name: "Nos projets",
-                title: "Nos projets",
-                searchable: true,
-                text: "Notre projets gamme de domaines d’innovation comprend l’intelligence artificielle, l’analyse de données, le cloud computing, la cybersécurité, l’Internet des objets (IoT) et la transformation digitale." +
-                    "Nous nous engageons à développer des technologies avancées susceptibles de transformer les entreprises et la société dans son ensemble." +
-                    "Notre stratégie d’innovation allie proximité, flexibilité et services de co-innovation personnalisés et dédiés que nous proposons à nos clients au sein de notre réseau mondial de 14 Inno’Labs"
-            },
-        partnersText:
-            {
-                id: "partnersText",
-                elementId: "nos-partenaires",
-                link: "/qui-sommes-nous#nos-partenaires",
-                name: "Ils travaillent avec nous",
-                title: "Ils travaillent avec nous",
-                searchable: true,
-                text: "Ils travaillent avec nous Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi." +
-                    "Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi."
-            },
-        partners: [
-            {
-                id: "partner1",
-                elementId: "partner1",
-                link: "/qui-sommes-nous#nos-partenaires",
-                title: "Partenaire",
-                searchable: true,
-                text: "Ecole des Mines de Saint-Etienne",
-                name: "Ecole des Mines de Saint-Etienne",
-                logoPath: chuLogo
-            },
-            {
-                id: "partner2",
-                elementId: "partner2",
-                link: "/qui-sommes-nous#nos-partenaires",
-                title: "Partenaire",
-                searchable: true,
-                text: "CHU de Saint-Etienne",
-                name: "CHU de Saint-Etienne",
-                logoPath: chuLogo
-            },
-            {
-                id: "partner3",
-                elementId: "partner3",
-                link: "/qui-sommes-nous#nos-partenaires",
-                title: "Partenaire",
-                searchable: true,
-                text: "Centre de Saint-Etienne",
-                name: "Centre de Saint-Etienne",
-                logoPath: chuLogo
-            },
-            {
-                id: "partner4",
-                elementId: "partner4",
-                link: "/qui-sommes-nous#nos-partenaires",
-                title: "Partenaire",
-                searchable: true,
-                text: "Centre Ingénierie & Santé",
-                name: "Centre Ingénierie & Santé",
-                logoPath: chuLogo
-            }
-        ],
-        teamText:
-            {
-                id: "teamText",
-                elementId: "equipe",
-                link: "#equipe",
-                name: "L'équipe Inno'Lab",
-                title: "L'équipe Inno'Lab",
-                searchable: true,
-                text: "equipe Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi." +
-                    "Lorem ipsum dolor sit amet consectetur. Porttitor adipiscing sagittis amet volutpat cursus sem nisi."
-            },
-        team: [
-            {name: "Simon Achard", work: "Product Owner", realPicture: simon, legoPicture: lego, searchable: false},
-            {name: "Salim Salah", work: "Scrum Master", realPicture: simon, legoPicture: lego, searchable: false},
-            {
-                name: "Berengere Baudelocque",
-                work: "Product Owner",
-                realPicture: simon,
-                legoPicture: lego,
-                searchable: false
-            },
-            {name: "Axel Bessy", work: "Consultant IA", realPicture: simon, legoPicture: lego, searchable: false},
-            {
-                name: "Alexandre Pozzi",
-                work: "Développeur full stack",
-                realPicture: simon,
-                legoPicture: lego,
-                searchable: false
-            },
-            {name: "Lilian Hertel", work: "Développeur VR", realPicture: simon, legoPicture: lego, searchable: false},
-            {name: "Alex", work: "Dev", realPicture: simon, legoPicture: lego, searchable: false}
-        ]
 
     }

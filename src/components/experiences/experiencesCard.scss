@@ -1,0 +1,9 @@
+.partner-logo {
+  width: auto;
+  height: 4rem;
+
+  @media (max-width: 1024px) {
+    max-width: 5rem;
+    max-height: 3rem;
+  }
+}

@@ -13,16 +13,16 @@ const options = {
     }
 };
 
-export default function NotFoundCatchAll() {
-
-
+function NotFoundCatchAll() {
     const {View: notfound} = useLottie(options);
 
     return (
         <RootLayout>
-            <div className="content flex content-center self-center items-center w-[600px] h-[600px]">
+            <div className="content section-not-found flex justify-self-center">
                 {notfound}
             </div>
         </RootLayout>
     );
 }
+
+export default NotFoundCatchAll;
