@@ -37,8 +37,8 @@ function HomeBanner() {
             <div className="overlay absolute inset-0 bg-black opacity-60 z-10"></div>
 
             <div className="z-20 flex flex-col justify-between h-full">
-                <div className="flex justify-around">
-                    <div>
+                <div className="flex justify-evenly">
+                    <div className="content-center">
                     <h1 className="banner-title">
                         Alexandre Pozzi
                     </h1>

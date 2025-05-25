@@ -10,14 +10,13 @@ const nextConfig = {
         contentDispositionType: 'attachment',
         contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     },
-    webpack: (config) => {
-            config.module.rules.push({
-                test: /\.svg$/,
-                use: ['@svgr/webpack'],
-            });
-
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.svg$/,
+            use: ['@svgr/webpack'],
+        });
         return config;
     },
 };
 
-export default nextConfig;
+export default nextConfig
