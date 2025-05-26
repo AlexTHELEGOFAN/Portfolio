@@ -7,11 +7,13 @@ import { contentData } from '@/assets/data/data';
 import Image from 'next/image';
 import LegoHead from '@/assets/images/lego_head.png';
 import RunShoe from '@/assets/images/run-shoe.png';
+import spaceImage from "@/assets/images/space.jpg";
 
 function AboutMe() {
   return (
     <section className='section-intro flex justify-between relative'>
-      {/*' : ' without-media'}*/}
+      <Image src={spaceImage} alt="" fill="true" className="image-element"
+             quality={100}/>
       <div className='content-container flex with-media'>
         <div className='text-content flex flex-col justify-center'>
           <h3 className='title'>A propos de moi</h3>

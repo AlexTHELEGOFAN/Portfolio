@@ -47,7 +47,16 @@ function HomePage() {
             <Linkedin />
           </a>
         </li>
-        <button className='cv-button flex items-center justify-center absolute'>
+        <button className='cv-button flex items-center justify-center absolute'
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/CV_Alexandre_Pozzi.pdf';
+                  link.download = 'CV_Alexandre_Pozzi.pdf'; // nom de fichier côté utilisateur
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+        >
 
         </button>
       </ul>
