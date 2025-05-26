@@ -1,15 +1,12 @@
 // @ts-check
-
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
-    output: "standalone",
-    images: {
-        dangerouslyAllowSVG: true,
-        contentDispositionType: 'attachment',
-        contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    },
+    output: 'export',
+    images: { unoptimized: true },
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
@@ -19,4 +16,4 @@ const nextConfig = {
     },
 };
 
-export default nextConfig
+module.exports = nextConfig;

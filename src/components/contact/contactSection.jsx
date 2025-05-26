@@ -2,12 +2,10 @@
 
 import './contactSection.scss';
 
-import React, { useState, useRef } from 'react';
+import React from 'react';
 
 import Image from 'next/image';
 import redDigitalImage from '@/assets/images/red-digital.jpg';
-import emailjs from '@emailjs/browser';
-import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
@@ -24,8 +22,7 @@ export default function ContactSection() {
           src={redDigitalImage}
           alt=''
           fill='true'
-          objectPosition='0% 30%'
-          objectFit='cover'
+          className={"image-object"}
           quality={100}
         />
       </div>
@@ -33,7 +30,7 @@ export default function ContactSection() {
       <div className='overlay absolute inset-0 bg-black opacity-60 z-10'></div>
 
       {/* Content */}
-      <div className='z-20 flex flex-col justify-between h-full w-[50%]'>
+      <div className='z-20 flex flex-col justify-between h-full w-[60%]'>
         <h3 className='title text-white-text text-center'>
           Me contacter par email
         </h3>

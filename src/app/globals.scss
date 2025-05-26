@@ -1,5 +1,6 @@
 :root {
   --black: #000000;
+  --lighter-black: #151320;
   --blue: #0073e6;
   --dark-background: #100e0c;
   --light-pink: #ecdfd4;
@@ -23,10 +24,13 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background: var(--white-background);
   font-size: 18px /* 20px */;
   line-height: 1.75rem /* 28px */;
-  font-family: 'Inter';
+  font-family: Inter, sans-serif;
   color: var(--white-text);
 }
 
@@ -59,20 +63,20 @@ section {
   z-index: 2;
 }
 
-.section-intro {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
+//.section-intro {
+//  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+//  z-index: 1;
+//}
 
 .section-schools {
-  box-shadow: 0 0px 30px 40px rgb(8 11 36 / 80%);
+  box-shadow: 0 0px 30px 40px rgb(6 11 49 / 80%);
   z-index: 2;
 }
 
 .section-experiences {
   box-shadow: 0 0px 30px 40px rgb(8 11 36 / 80%);
   z-index: 1;
-  background-color: #000000;
+  background-color: var(--black);
 }
 
 .section-skills {
@@ -81,10 +85,8 @@ section {
 }
 
 .section-not-found {
-  background-color: #000000;
-  height: 90vh;
-  border: none !important;
-  border-radius: 0% !important;
+  background-color: var(--black);
+  overflow: hidden !important;
 }
 
 .parallax-container {
@@ -104,8 +106,8 @@ section {
 }
 
 .button-white-icon-right {
-  background-color: #151320;
-  color: #f2f2f2;
+  background-color: var(--lighter-black);
+  color: var(--white-text);
   width: 10em;
   height: 1.5em;
   font-size: 1rem;
@@ -157,12 +159,12 @@ section {
   text-transform: uppercase;
   content: 'Curriculum Vitae';
   position: absolute;
-  background-color: #151320;
+  background-color: var(--lighter-black);
   width: 96%;
   height: 86%;
   border-radius: 0.8em;
 
-  color: #f2f2f2;
+  color: var(--white-text);
   font-size: 1rem;
   font-weight: bold;
 

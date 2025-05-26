@@ -17,18 +17,17 @@ export default function SchoolsSection() {
           src={lyonImage}
           alt=''
           fill='true'
-          objectPosition='0% 60%'
-          objectFit='cover'
+          className="image-element"
           quality={100}
         />
       </div>
 
-      <div className='overlay absolute inset-0 bg-black opacity-60 z-10'></div>
+      <div className='overlay absolute inset-0 bg-black opacity-40 z-10'></div>
 
       {/* Content */}
       <div className='z-20 flex flex-col justify-between h-full'>
         <h3 className='title text-white-text text-center'>
-          Mon parcours d'études
+          Mon parcours d&apos;études
         </h3>
 
         {/*Partners list*/}

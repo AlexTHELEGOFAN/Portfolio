@@ -7,7 +7,6 @@ import ExperiencesCard from './experiencesCard';
 import { contentData } from '@/assets/data/data';
 import Image from 'next/image';
 import lyonImage from '@/assets/images/lyon.jpg';
-import Water from '@/assets/svg/water.svg';
 
 export default function ExperiencesSection() {
   return (
@@ -46,8 +45,6 @@ export default function ExperiencesSection() {
           src={lyonImage}
           alt=''
           fill
-          objectPosition='0% 60%'
-          objectFit='cover'
           quality={100}
           className='reflected-image'
         />

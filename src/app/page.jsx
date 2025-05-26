@@ -2,38 +2,28 @@
 
 import './globals.scss';
 
-import RootLayout from '@/components/layout/rootLayout';
-import HomeBanner from '@/components/homeBanner';
-import AboutMe from '@/components/aboutMe';
-import ExperiencesSection from '@/components/experiences/experiencesSection';
-import SectorSkills from '@/components/skills/sectorSkills';
+import React, { useEffect } from 'react';
 
 import Github from '@/assets/svg/github-white.svg';
 import Linkedin from '@/assets/svg/linkedin-white.svg';
-import ContactSection from '@/components/contact/contactSection';
-import { useEffect, useRef } from 'react';
+
+import RootLayout from '@/components/layout/rootLayout';
+import HomeBanner from '@/components/homeBanner';
+import AboutMe from '@/components/aboutMe';
 import SchoolsSection from '@/components/schools/schoolsSection';
+import ExperiencesSection from '@/components/experiences/experiencesSection';
+import SkillsSection from '@/components/skills/skillsSection';
+import ContactSection from '@/components/contact/contactSection';
 
 function HomePage() {
-  const topWallRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (topWallRef.current) {
-        const value = window.scrollY;
-        const scaleY = Math.max(0.5, 1 - value * 0.0001); // Ne jamais descendre en-dessous de 0.5
-        topWallRef.current.style.transform = `translateY(${
-          value * -0.07
-        }px) scale(1, ${scaleY})`;
-      }
-    };
+    const currentUrl = window.location.href;
 
-    window.addEventListener('scroll', handleScroll);
-
-    // Nettoyage propre pour éviter les fuites mémoire
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    if (currentUrl.includes('#')) {
+      const scrollAmount = window.innerHeight * 0.05; // 5% de la hauteur de la fenêtre
+      window.scrollBy(0, -scrollAmount); // Faire défiler vers le haut
+    }
   }, []);
 
   return (
@@ -58,12 +48,10 @@ function HomePage() {
           </a>
         </li>
         <button className='cv-button flex items-center justify-center absolute'>
-          {/*Curriculum Vitae*/}
-          {/*<FontAwesomeIcon icon={faAngleRight} size="xl" className="ml-3"/>*/}
+
         </button>
       </ul>
 
-      {/* Bannière d'accueil */}
       <HomeBanner />
 
       <div className='content'>
@@ -73,7 +61,7 @@ function HomePage() {
 
         <ExperiencesSection />
 
-        <SectorSkills />
+        <SkillsSection />
 
         <ContactSection />
       </div>

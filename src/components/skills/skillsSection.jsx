@@ -1,6 +1,6 @@
 'use client'; // This is a client component 👈🏽
 
-import './sectorSkills.scss';
+import './skillsSection.scss';
 
 import React from 'react';
 import Image from 'next/image';
@@ -50,7 +50,8 @@ import Vscode from '@/assets/svg/Vscode.svg';
 import WebStorm from '@/assets/svg/WebStorm.svg';
 import WordPress from '@/assets/images/WordPress.png';
 import NodeJS from '@/assets/svg/NodeJS.svg';
-function SectorSkills() {
+
+function SkillsSection() {
   return (
     <section className='section-white section-skills flex justify-between relative'>
       <div className='content-container flex with-media'>
@@ -197,8 +198,6 @@ function SectorSkills() {
                         <Image
                           src={WordPress}
                           alt='WordPress'
-                          // fill='true'
-                          // objectFit='cover'
                           quality={100}
                           className='icon-box-image'
                         />{' '}
@@ -241,8 +240,6 @@ function SectorSkills() {
                           src={noSQL}
                           alt='noSQL'
                           width={100}
-                          // fill='true'
-                          // objectFit='cover'
                           quality={100}
                           className='icon-box-image'
                         />
@@ -260,8 +257,6 @@ function SectorSkills() {
                         <Image
                           src={mongoDB}
                           alt='mongoDB'
-                          // fill='true'
-                          // objectFit='cover'
                           quality={100}
                           className='icon-box-image'
                         />
@@ -284,8 +279,6 @@ function SectorSkills() {
                         <Image
                           src={PhpMyAdmin}
                           alt='PhpMyAdmin'
-                          // fill='true'
-                          // objectFit='cover'
                           quality={100}
                           className='icon-box-image'
                         />
@@ -359,7 +352,6 @@ function SectorSkills() {
                         <Image
                           src={Jasmine}
                           alt='Jasmine'
-                          objectFit='cover'
                           quality={100}
                           className='icon-box-image'
                         />
@@ -486,7 +478,6 @@ function SectorSkills() {
                         <Image
                           src={Scrum}
                           alt='Scrum'
-                          objectFit='cover'
                           quality={100}
                           className='icon-box-image'
                         />
@@ -526,4 +517,4 @@ function SectorSkills() {
   );
 }
 
-export default SectorSkills;
+export default SkillsSection;

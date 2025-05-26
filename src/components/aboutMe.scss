@@ -5,6 +5,8 @@
   color: #f2f2f2;
   flex-direction: column;
   width: 100%;
+  //box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 
   &::before {
     content: '';
@@ -13,7 +15,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
 
@@ -79,7 +81,7 @@
 
   .interests-content {
     @media (min-width: 1200px) {
-      width: 33%;
+      width: 42%;
       position: relative;
     }
 

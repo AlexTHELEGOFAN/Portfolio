@@ -2,8 +2,7 @@
 
 import "./homeBanner.scss";
 
-import React from "react";
-import {useLottie} from "lottie-react";
+import { useLottie } from 'lottie-react';
 import scrollAnimation from "@/assets/lottie/scroll-animation.json";
 import bannerImage from "@/assets/images/banner_image.jpg";
 import profile from "@/assets/images/profile.jpg";
@@ -30,7 +29,7 @@ function HomeBanner() {
     return (
         <div className="banner flex flex-col w-full relative">
             <div className="background-image absolute">
-                <Image src={bannerImage} alt="" fill="true" objectPosition="0% 0%" objectFit="cover"
+                <Image src={bannerImage} alt="" fill="true" className="image-element"
                        quality={100}/>
             </div>
 
@@ -53,8 +52,6 @@ function HomeBanner() {
                             alt=""
                             quality={100}
                             className="profile-image"
-                            objectFit={"cover"}
-                            objectPosition={"bottom right"}
                         />
                     </div>
                 </div>

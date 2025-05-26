@@ -71,6 +71,8 @@
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   overflow: hidden;
+  object-position: 0% 60%;
+  object-fit: cover
 }
 
 @keyframes ripple {

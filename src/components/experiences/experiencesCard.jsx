@@ -10,7 +10,10 @@ export default function ExperiencesCard({ partner }) {
     <div className='partner-card flex flex-col items-center justify-center'>
       <div className='logo-container'>
         <Image
-          className='partner-logo aspect-w-1 aspect-h-1 md:aspect-w-5 md:aspect-h-4 object-cover'
+          className='partner-logo
+          aspect-w-1 aspect-h-1 md:aspect-w-1 md:aspect-h-1
+
+          object-cover'
           src={partner.logoPath}
           alt={partner.name}
           quality={100}
